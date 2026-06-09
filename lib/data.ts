@@ -41,7 +41,7 @@ I care about writing maintainable code and shipping things that actually work.`,
       description:
         "A REST API service with full CI/CD pipeline. Containerized with Docker and deployed automatically on push to main.",
       tech: ["Node.js", "PostgreSQL", "Docker", "CI/CD"],
-      liveUrl: "",
+      liveUrl: null,
       githubUrl: "https://github.com/yourusername/project-three",
     },
     {
@@ -54,3 +54,5 @@ I care about writing maintainable code and shipping things that actually work.`,
     },
   ],
 };
+
+export type Project = typeof siteData.projects[number];
