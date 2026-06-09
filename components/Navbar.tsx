@@ -32,14 +32,15 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <nav aria-label="Main" className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo / Name */}
         <a
           href="#"
+          aria-label="Home"
           className="font-display font-semibold text-lg tracking-tight text-text hover:text-accent transition-colors"
         >
           {firstName}
-          <span className="text-accent">.</span>
+          <span className="text-accent" aria-hidden="true">.</span>
         </a>
 
         {/* Nav links */}
