@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className="bg-bg text-text antialiased min-h-screen relative">
         {/* Dot Grid Background */}
         <div
-          className="pointer-events-none fixed inset-0 z-0 opacity-20"
+          className="pointer-events-none fixed inset-0 z-0 opacity-40"
           style={{
             backgroundImage: "radial-gradient(var(--muted) 1px, transparent 1px)",
             backgroundSize: "24px 24px",
