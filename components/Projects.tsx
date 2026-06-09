@@ -1,4 +1,5 @@
 import { siteData } from "@/lib/data";
+import TechIcon from "./TechIcon";
 
 export default function Projects() {
   return (
@@ -44,8 +45,9 @@ export default function Projects() {
                 {project.tech.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2.5 py-1 rounded-md border border-accent/30 text-accent text-xs font-medium"
+                    className="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-accent/30 text-accent text-xs font-medium"
                   >
+                    <TechIcon name={tag} className="w-3 h-3" />
                     {tag}
                   </span>
                 ))}
