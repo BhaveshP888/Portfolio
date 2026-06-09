@@ -13,7 +13,7 @@ export default function Hero() {
         {/* Available badge */}
         {siteData.availableForWork && (
           <div
-            className="animate-fade-in inline-flex items-center gap-2 px-4 py-1.5 brutal-tag text-xs font-medium mb-8"
+            className="animate-fade-in inline-flex items-center gap-2 px-4 py-1.5 cyber-tag text-xs font-medium mb-8"
             style={{ animationDelay: "0.1s" }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
@@ -52,7 +52,7 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="px-7 py-3 brutal-btn font-medium text-sm"
+            className="px-7 py-3 cyber-btn font-medium text-sm"
           >
             View Projects
           </a>
@@ -60,7 +60,7 @@ export default function Hero() {
             href={siteData.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-7 py-3 brutal-btn-alt font-medium text-sm"
+            className="px-7 py-3 cyber-btn-alt font-medium text-sm"
           >
             GitHub ↗
           </a>

@@ -17,7 +17,7 @@ export default function Projects() {
           {siteData.projects.map((project) => (
             <article
               key={project.title}
-              className="reveal brutal-card group flex flex-col p-6"
+              className="reveal cyber-card group flex flex-col p-6"
             >
               {/* Title */}
               <h3 className="font-display text-text font-semibold text-lg mb-2 group-hover:text-accent transition-colors">
@@ -34,7 +34,7 @@ export default function Projects() {
                 {project.tech.map((tag) => (
                   <span
                     key={tag}
-                    className="flex items-center gap-1.5 px-2.5 py-1 brutal-tag text-xs font-medium"
+                    className="flex items-center gap-1.5 px-2.5 py-1 cyber-tag text-xs font-medium"
                   >
                     <TechIcon name={tag} className="w-3 h-3" />
                     {tag}
