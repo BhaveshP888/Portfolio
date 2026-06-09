@@ -109,6 +109,58 @@ body {
   max-width: 80rem;
   margin-inline: auto;
   border: none;
-  border-top: 1px solid var(--border-color);
-  opacity: 0.5;
+  border-top: 2px solid var(--border-color);
+  opacity: 1;
+}
+
+.brutal-card {
+  background-color: var(--surface);
+  border: 2px solid var(--border-color);
+  box-shadow: 6px 6px 0px 0px var(--accent);
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.brutal-card:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0px 0px var(--accent);
+  border-color: var(--accent);
+}
+
+.brutal-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: 2px solid var(--text);
+  box-shadow: 4px 4px 0px 0px var(--text);
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.brutal-btn:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px var(--text);
+  background-color: var(--accent-hover);
+}
+
+.brutal-btn-alt {
+  background-color: var(--surface);
+  color: var(--text);
+  border: 2px solid var(--text);
+  box-shadow: 4px 4px 0px 0px var(--accent);
+  transition: all 0.2s ease;
+  border-radius: 0;
+}
+
+.brutal-btn-alt:hover {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px var(--accent);
+  color: var(--accent);
+}
+
+.brutal-tag {
+  background-color: var(--bg);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 0;
+  box-shadow: 2px 2px 0px 0px var(--accent);
 }

@@ -23,7 +23,7 @@ export default function Skills() {
                 {items.map((skill) => (
                   <span
                     key={skill}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-text text-sm font-medium hover:border-accent/50 hover:text-accent transition-colors cursor-default"
+                    className="flex items-center gap-2 px-4 py-2 brutal-card text-text text-sm font-medium cursor-default"
                   >
                     <TechIcon name={skill} className="w-4 h-4" />
                     {skill}
