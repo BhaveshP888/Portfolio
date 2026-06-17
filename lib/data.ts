@@ -1,40 +1,48 @@
 export const siteData = {
-  name: "Your Name",
+  name: "Bhavesh Patil",
   role: "Full-Stack Developer",
-  tagline: "I build fast, scalable web apps — from database to deployment.",
-  email: "you@email.com",
-  github: "https://github.com/yourusername",
+  tagline: "I build fast, modern and scalable web apps ",
+  email: "plbhavesh88@gmail.com",
+  github: "https://github.com/BhaveshP888",
   linkedin: "https://linkedin.com/in/yourusername",
   resumeUrl: "/resume.pdf", // drop resume.pdf into /public when ready
   availableForWork: true,
 
-  about: `I'm a full-stack developer who loves turning ideas into production-ready products.
-I work across the entire stack — from crafting clean UIs in React and Next.js to designing
-robust APIs with Node.js and managing databases with PostgreSQL and MongoDB.
-I care about writing maintainable code and shipping things that actually work.`,
+  about: `I'm a full-stack developer who loves turning raw ideas into production-ready products.
+I love to innovate with new ideas and features by upskilling and adapting to new technologies.
+I like to build apps with robust APIs with Node.js and managing databases with PostgreSQL and MongoDB.
+I care about writing easily readable and maintainable code and shipping products that solve real world problems.`,
 
   skills: {
-    Frontend: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "shadcn/ui"],
-    Backend:  ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Prisma ORM"],
-    Tools:    ["Docker", "CI/CD", "Git"],
+    Frontend: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
+    Backend: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Prisma ORM"],
+    Tools: ["Docker", "CI/CD", "Git"],
   },
 
   projects: [
     {
-      title: "Project One",
+      title: "Logitrack",
       description:
-        "A full-stack web application that does something cool. Built with Next.js on the frontend and Node.js + PostgreSQL on the backend.",
-      tech: ["Next.js", "Node.js", "PostgreSQL", "Prisma"],
-      liveUrl: "https://project-one.vercel.app",
-      githubUrl: "https://github.com/yourusername/project-one",
+        "LogiTrack is a modern, real-time logistics and supply chain orchestration platform. It enables administrators to manage complex global infrastructures, monitor real-time telemetrics, and optimize routing across fleets with military-grade precision. The platform also provides a dedicated driver portal for route execution and checkpoint tracking.",
+      tech: ["React.js", "TailwindCSS", "TypeScript", "Node.js", "PostgreSQL", "Prisma"],
+      liveUrl: "https://logitrack-beta.vercel.app",
+      githubUrl: "https://github.com/BhaveshP888/logitrack",
     },
     {
-      title: "Project Two",
+      title: "DecodeAi",
       description:
-        "A real-time application with WebSocket support. Features user authentication, live updates, and a clean dashboard.",
-      tech: ["React", "Express.js", "MongoDB", "Docker"],
-      liveUrl: "https://project-two.vercel.app",
-      githubUrl: "https://github.com/yourusername/project-two",
+        "Decode is a technical engine and web interface for parsing, normalizing, and analyzing ingredient labels from foods, beverages, and pharmaceuticals. It leverages generative AI to identify additives, evaluate chemical safety, and track cumulative compound exposure over time.",
+      tech: ["Next.js", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma ORM", "Supabase", "Gemini API", "Supabase Auth"],
+      liveUrl: "https://decode-dusky.vercel.app/",
+      githubUrl: "https://github.com/BhaveshP888/Decode",
     },
     {
       title: "Project Three",
