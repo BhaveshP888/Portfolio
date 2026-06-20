@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
 import { Syne, DM_Sans } from "next/font/google";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const syne = Syne({
-  variable: "--font-display-var",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
+  variable: "--font-display-var",
 });
 
 const dmSans = DM_Sans({
-  variable: "--font-body-var",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
   display: "swap",
+  variable: "--font-body-var",
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Full-Stack Developer",
-  description:
-    "Full-stack developer specializing in MERN stack and Next.js. View my projects and get in touch.",
+  title: "Bhavesh Patil — Full-Stack Developer",
+  description: "Full-stack developer specializing in React, Next.js and Node.js. View my projects and get in touch.",
 };
 
 export default function RootLayout({
@@ -31,19 +29,17 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${syne.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-bg text-text antialiased min-h-screen relative">
-        {/* Dot Grid Background */}
-        <div
-          className="pointer-events-none fixed inset-0 z-0 opacity-40"
-          style={{
-            backgroundImage: "radial-gradient(var(--muted) 1px, transparent 1px)",
-            backgroundSize: "24px 24px",
-          }}
-        />
-        <div className="relative z-10">
-          {children}
-        </div>
+      <body className="bg-bg text-text antialiased min-h-screen flex justify-center pb-32 transition-colors duration-300">
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" enableSystem>
+          {/* Background orbs — purely CSS, GPU-only, reduced-motion aware */}
+          <div className="orb orb-a" aria-hidden="true" />
+          <div className="orb orb-b" aria-hidden="true" />
+          <div className="relative z-10 w-full max-w-[680px] px-6">
+            {children}
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

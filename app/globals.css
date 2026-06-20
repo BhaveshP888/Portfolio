@@ -3,14 +3,23 @@
 
 /* ─── Design Tokens ─────────────────────────────────────────────────────── */
 :root {
-  --bg:           #0a0a0f;
-  --surface:      #111118;
-  --border-color: #1e1e2e;
-  --text:         #f0f0f5;
-  --muted:        #6b6b80;
-  --accent:       #6366f1;
-  --accent-hover: #818cf8;
+  --bg:           #ffffff;
+  --surface:      #f4f4f5;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --text:         #0a0a0a;
+  --muted:        #52525b;
+  --accent:       #22c55e;
+  --accent-hover: #16a34a;
+}
 
+[data-theme='dark'] {
+  --bg:           #0a0a0a;
+  --surface:      #111111;
+  --border-color: rgba(255, 255, 255, 0.09);
+  --text:         #fafafa;
+  --muted:        #a1a1aa;
+  --accent:       #22c55e;
+  --accent-hover: #16a34a;
 }
 
 /* ─── Tailwind Theme Registration ───────────────────────────────────────── */
@@ -47,116 +56,57 @@ body {
   font-family: var(--font-body);
 }
 
-/* ─── Keyframes ─────────────────────────────────────────────────────────── */
-@keyframes orb-pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.85;
-  }
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* ─── Utility Classes ───────────────────────────────────────────────────── */
-.animate-orb {
-  animation: orb-pulse 6s ease-in-out infinite;
-}
-
-.animate-fade-up {
-  opacity: 0;
-  animation: fade-up 0.6s ease forwards;
-}
-
-.animate-fade-in {
-  opacity: 0;
-  animation: fade-in 0.8s ease forwards;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-divider {
-  max-width: 80rem;
-  margin-inline: auto;
-  border: none;
-  border-top: 2px solid var(--border-color);
-  opacity: 1;
-}
-
-.cyber-card {
-  background-color: var(--surface);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 0.75rem;
-  transition: all 0.3s ease;
-}
-
-.cyber-card:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.15), inset 0 0 20px rgba(99, 102, 241, 0.05);
-  transform: translateY(-2px);
-}
-
-.cyber-btn {
+::selection {
   background-color: var(--accent);
-  color: #ffffff;
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
+  color: #000;
 }
 
-.cyber-btn:hover {
-  background-color: var(--accent-hover);
-  box-shadow: 0 0 20px -2px rgba(99, 102, 241, 0.4);
+/* ─── Background Orbs ───────────────────────────────────────────────────── */
+@keyframes orb-drift-a {
+  0%   { transform: translate(0px, 0px)   scale(1); }
+  33%  { transform: translate(40px, -30px) scale(1.05); }
+  66%  { transform: translate(-20px, 20px) scale(0.97); }
+  100% { transform: translate(0px, 0px)   scale(1); }
 }
 
-.cyber-btn-alt {
-  background-color: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0.5rem;
-  transition: all 0.3s ease;
+@keyframes orb-drift-b {
+  0%   { transform: translate(0px, 0px)   scale(1); }
+  33%  { transform: translate(-35px, 25px) scale(0.95); }
+  66%  { transform: translate(25px, -15px) scale(1.04); }
+  100% { transform: translate(0px, 0px)   scale(1); }
 }
 
-.cyber-btn-alt:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 0 15px -2px rgba(99, 102, 241, 0.2), inset 0 0 10px rgba(99, 102, 241, 0.1);
-}
-
-.cyber-tag {
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--text);
+.orb {
+  position: fixed;
   border-radius: 9999px;
-  transition: all 0.3s ease;
+  filter: blur(60px);
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
+}
+
+.orb-a {
+  width: 650px;
+  height: 650px;
+  top: -160px;
+  right: -120px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.50) 0%, transparent 75%);
+  animation: orb-drift-a 22s ease-in-out infinite;
+}
+
+.orb-b {
+  width: 520px;
+  height: 520px;
+  bottom: 5%;
+  left: -140px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.38) 0%, transparent 75%);
+  animation: orb-drift-b 28s ease-in-out infinite;
+}
+
+/* Light mode */
+:root .orb-a {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, transparent 75%);
+}
+:root .orb-b {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.14) 0%, transparent 75%);
 }

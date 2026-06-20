@@ -1,43 +1,17 @@
-"use client";
-
-import { useEffect } from "react";
-import Navbar    from "@/components/Navbar";
 import Hero      from "@/components/Hero";
-import About     from "@/components/About";
 import Skills    from "@/components/Skills";
 import Projects  from "@/components/Projects";
-import Contact   from "@/components/Contact";
+import Dock      from "@/components/Dock";
 
 export default function Home() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <main>
-      <Navbar />
+    <main className="flex flex-col">
       <Hero />
-      <hr className="section-divider" />
-      <About />
-      <hr className="section-divider" />
+      <hr className="border-t border-border-color opacity-50" />
       <Skills />
-      <hr className="section-divider" />
+      <hr className="border-t border-border-color opacity-50" />
       <Projects />
-      <Contact />
+      <Dock />
     </main>
   );
 }

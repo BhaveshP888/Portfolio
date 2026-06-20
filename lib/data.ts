@@ -32,7 +32,7 @@ I care about writing easily readable and maintainable code and shipping products
       title: "Logitrack",
       description:
         "LogiTrack is a modern, real-time logistics and supply chain orchestration platform. It enables administrators to manage complex global infrastructures, monitor real-time telemetrics, and optimize routing across fleets with military-grade precision. The platform also provides a dedicated driver portal for route execution and checkpoint tracking.",
-      tech: ["React.js", "TailwindCSS", "TypeScript", "Node.js", "PostgreSQL", "Prisma"],
+      tech: ["React.js", "Redux Toolkit", "TailwindCSS", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "JWT Authentication"],
       liveUrl: "https://logitrack-beta.vercel.app",
       githubUrl: "https://github.com/BhaveshP888/logitrack",
     },
