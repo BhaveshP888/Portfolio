@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Minimalist Developer Portfolio
 
-## Getting Started
+A highly polished, motion-aware developer portfolio built using Next.js 16 (App Router), Tailwind CSS v4, React 19, and Motion (Framer Motion). 
 
-First, run the development server:
+Designed following modern minimalist principles, featuring custom typography, a dynamic drifting background, glassmorphic card elements, and a floating navigation dock.
+
+## Key Features
+
+- **Atmospheric Background**: Slow-drifting radial gradient background orbs (indigo and violet) powered by GPU-accelerated CSS animations.
+- **Glassmorphic Cards**: Project cards that mirror the floating dock's look with transparent backgrounds, subtle top-edge highlights, and a soft glow on hover.
+- **Symmetrical Layout**: Balanced 2-column grid layout for projects that naturally matches description text length.
+- **Single Source of Truth**: All visible content (skills, projects, bio, social links) is managed in a single data file: `lib/data.ts`.
+- **Sensory Hover & Click Physics**: Elements like the floating navigation dock and cards react to hover states and physical click states (`scale-[0.92]`).
+- **Dark/Light Mode**: Fully functional theme toggler matching browser preference automatically.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4
+- **Animation**: Motion (`motion/react`)
+- **Icons**: Phosphor Icons (`@phosphor-icons/react`)
+- **Theme**: Next Themes (`next-themes`)
+- **Package Manager**: Bun
+
+## Development
+
+This project uses **Bun** as the primary package manager.
+
+First, install the dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+bun install
+```
+
+Then, run the development server:
+
+```bash
 bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Customization
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To customize the details (e.g. your name, projects, tech stack, social URLs), modify `lib/data.ts`:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```typescript
+export const siteData = {
+  name: "Bhavesh Patil",
+  role: "Full-Stack Developer",
+  tagline: "I build fast, modern and scalable web apps",
+  email: "plbhavesh88@gmail.com",
+  github: "https://github.com/BhaveshP888",
+  // ...
+};
+```
