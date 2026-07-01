@@ -11,6 +11,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="py-10">
+      <h1 className="pb-2">Skills</h1>
       <div className="space-y-6">
         {CATEGORIES.map((cat, catIdx) => (
           <div key={cat}>

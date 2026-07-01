@@ -10,6 +10,12 @@
   --muted:        #52525b;
   --accent:       #22c55e;
   --accent-hover: #16a34a;
+
+  --glass-bg:           rgba(0, 0, 0, 0.02);
+  --glass-bg-hover:     rgba(0, 0, 0, 0.04);
+  --glass-border:       rgba(0, 0, 0, 0.06);
+  --glass-border-hover: rgba(0, 0, 0, 0.15);
+  --glass-shadow-inset: rgba(0, 0, 0, 0.02);
 }
 
 [data-theme='dark'] {
@@ -20,6 +26,12 @@
   --muted:        #a1a1aa;
   --accent:       #22c55e;
   --accent-hover: #16a34a;
+
+  --glass-bg:           rgba(255, 255, 255, 0.03);
+  --glass-bg-hover:     rgba(255, 255, 255, 0.06);
+  --glass-border:       rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.22);
+  --glass-shadow-inset: rgba(255, 255, 255, 0.05);
 }
 
 /* ─── Tailwind Theme Registration ───────────────────────────────────────── */
@@ -31,6 +43,12 @@
   --color-muted:        var(--muted);
   --color-accent:       var(--accent);
   --color-accent-hover: var(--accent-hover);
+
+  --color-glass:              var(--glass-bg);
+  --color-glass-hover:        var(--glass-bg-hover);
+  --color-glass-border:       var(--glass-border);
+  --color-glass-border-hover: var(--glass-border-hover);
+  --color-glass-shadow-inset: var(--glass-shadow-inset);
 
   --font-display: var(--font-display-var);
   --font-body:    var(--font-body-var);

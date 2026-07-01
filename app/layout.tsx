@@ -17,7 +17,20 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Bhavesh Patil — Full-Stack Developer",
-  description: "Full-stack developer specializing in React, Next.js and Node.js. View my projects and get in touch.",
+  description: "Full-stack developer specializing in React, Next.js, and Node.js. View my projects and get in touch.",
+  openGraph: {
+    title: "Bhavesh Patil — Full-Stack Developer",
+    description: "Full-stack developer specializing in React, Next.js, and Node.js. View my projects and get in touch.",
+    url: "https://github.com/BhaveshP888",
+    siteName: "Bhavesh Patil Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bhavesh Patil — Full-Stack Developer",
+    description: "Full-stack developer specializing in React, Next.js, and Node.js. View my projects and get in touch.",
+  },
 };
 
 export default function RootLayout({

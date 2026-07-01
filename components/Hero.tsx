@@ -1,12 +1,24 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "motion/react";
 import { siteData } from "@/lib/data";
-import { ArrowRight, GithubLogo } from "@phosphor-icons/react";
+import { GithubLogo, Copy, Check } from "@phosphor-icons/react";
 
 export default function Hero() {
+  const [copied, setCopied] = useState(false);
   const paragraphs = siteData.about.split('\n').filter(p => p.trim() !== '');
   const handle = siteData.github.split('/').pop() || "username";
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(siteData.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.warn("Failed to copy email: ", err);
+    }
+  };
 
   return (
     <section id="hero" className="pt-20 pb-10 sm:pt-24">
@@ -58,15 +70,27 @@ export default function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.28, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center gap-3 flex-wrap"
+        className="flex items-center gap-2 flex-wrap"
       >
-        <a
-          href={`mailto:${siteData.email}`}
-          className="inline-flex items-center gap-2 bg-text text-bg px-5 py-2.5 rounded-full font-semibold text-[13px] hover:opacity-85 active:scale-[0.97] transition-all"
-        >
-          Get in touch
-          <ArrowRight weight="bold" size={13} />
-        </a>
+        <div className="flex items-center gap-1 bg-text text-bg rounded-full pl-5 pr-2 py-1.5 hover:opacity-90 transition-opacity">
+          <a
+            href={`mailto:${siteData.email}`}
+            className="font-semibold text-[13px]"
+          >
+            Get in touch
+          </a>
+          <button
+            onClick={handleCopyEmail}
+            className="flex items-center justify-center p-1.5 hover:bg-bg/10 rounded-full active:scale-90 transition-transform cursor-pointer"
+            title="Copy email to clipboard"
+          >
+            {copied ? (
+              <Check weight="bold" size={13} className="text-bg animate-in fade-in zoom-in duration-250" />
+            ) : (
+              <Copy size={13} className="text-bg" />
+            )}
+          </button>
+        </div>
         <a
           href={siteData.github}
           target="_blank"

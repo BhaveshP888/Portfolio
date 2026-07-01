@@ -1,23 +1,24 @@
 export const siteData = {
   name: "Bhavesh Patil",
   role: "Full-Stack Developer",
-  tagline: "I build fast, modern and scalable web apps ",
+  tagline: "I love to build modern web apps and bring new ideas to life.",
   email: "plbhavesh88@gmail.com",
   github: "https://github.com/BhaveshP888",
   linkedin: "https://linkedin.com/in/yourusername",
   resumeUrl: "/resume.pdf", // drop resume.pdf into /public when ready
   availableForWork: true,
 
-  about: `I'm a full-stack developer who loves turning raw ideas into production-ready products.
-I love to innovate with new ideas and features by upskilling and adapting to new technologies.
-I like to build apps with robust APIs with Node.js and managing databases with PostgreSQL and MongoDB.
-I care about writing easily readable and maintainable code and shipping products that solve real world problems.`,
+  about: `I'm a full-stack developer who loves turning raw ideas into production-ready products using React.js and Node.js.
+I like bringing new and interesting ideas to life by building full-stack applications.
+I build apps with robust APIs using Node.js & Express.js and manage databases with PostgreSQL and MongoDB.
+I care about writing easily readable and maintainable code and shipping products that solve real-world problems.`,
 
   skills: {
     Frontend: [
       "HTML",
       "CSS",
       "JavaScript",
+      "TypeScript",
       "React",
       "Next.js",
       "Tailwind CSS",
@@ -35,6 +36,8 @@ I care about writing easily readable and maintainable code and shipping products
       tech: ["React.js", "Redux Toolkit", "TailwindCSS", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "JWT Authentication"],
       liveUrl: "https://logitrack-beta.vercel.app",
       githubUrl: "https://github.com/BhaveshP888/logitrack",
+      image: "/logitrack_hero.png",
+      status: "Completed",
     },
     {
       title: "DecodeAi",
@@ -43,7 +46,10 @@ I care about writing easily readable and maintainable code and shipping products
       tech: ["Next.js", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma ORM", "Supabase", "Gemini API", "Supabase Auth"],
       liveUrl: "https://decode-dusky.vercel.app/",
       githubUrl: "https://github.com/BhaveshP888/Decode",
+      image: "/decodeai_hero.png",
+      status: "Completed",
     },
+    /*
     {
       title: "Project Three",
       description:
@@ -60,6 +66,7 @@ I care about writing easily readable and maintainable code and shipping products
       liveUrl: "https://project-four.vercel.app",
       githubUrl: "https://github.com/yourusername/project-four",
     },
+    */
   ],
 };
 

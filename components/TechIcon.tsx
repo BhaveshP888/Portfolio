@@ -1,42 +1,62 @@
 import {
-  SiHtml5,
-  SiCss,
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiTailwindcss,
-  SiShadcnui,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiPrisma,
-  SiDocker,
-  SiGithubactions,
-  SiGit,
-} from "react-icons/si";
+  Html5Original,
+  Css3Original,
+  JavascriptOriginal,
+  TypescriptOriginal,
+  ReactOriginal,
+  NextjsOriginal,
+  TailwindcssOriginal,
+  NodejsOriginal,
+  ExpressOriginal,
+  MongodbOriginal,
+  PostgresqlOriginal,
+  PrismaOriginal,
+  DockerOriginal,
+  GithubactionsOriginal,
+  GitOriginal,
+  ReduxOriginal,
+  SupabaseOriginal,
+} from "devicons-react";
+import { SiShadcnui, SiJsonwebtokens, SiGoogle, SiOpenai } from "react-icons/si";
 
 const iconMap: Record<string, React.ElementType> = {
-  "HTML": SiHtml5,
-  "CSS": SiCss,
-  "JavaScript": SiJavascript,
-  "React": SiReact,
-  "Next.js": SiNextdotjs,
-  "Tailwind CSS": SiTailwindcss,
+  "HTML": Html5Original,
+  "CSS": Css3Original,
+  "JavaScript": JavascriptOriginal,
+  "TypeScript": TypescriptOriginal,
+  "React": ReactOriginal,
+  "React.js": ReactOriginal,
+  "Next.js": NextjsOriginal,
+  "Tailwind CSS": TailwindcssOriginal,
+  "TailwindCSS": TailwindcssOriginal,
   "shadcn/ui": SiShadcnui,
-  "Node.js": SiNodedotjs,
-  "Express.js": SiExpress,
-  "MongoDB": SiMongodb,
-  "PostgreSQL": SiPostgresql,
-  "Prisma": SiPrisma,
-  "Prisma ORM": SiPrisma,
-  "Docker": SiDocker,
-  "CI/CD": SiGithubactions,
-  "Git": SiGit,
+  "Node.js": NodejsOriginal,
+  "Express.js": ExpressOriginal,
+  "MongoDB": MongodbOriginal,
+  "PostgreSQL": PostgresqlOriginal,
+  "Prisma": PrismaOriginal,
+  "Prisma ORM": PrismaOriginal,
+  "Docker": DockerOriginal,
+  "CI/CD": GithubactionsOriginal,
+  "Git": GitOriginal,
+  "Redux Toolkit": ReduxOriginal,
+  "Supabase": SupabaseOriginal,
+  "Supabase Auth": SupabaseOriginal,
+  "Gemini API": SiGoogle,
+  "JWT Authentication": SiJsonwebtokens,
+  "OpenAI": SiOpenai,
+};
+
+const colorMap: Record<string, string> = {
+  "Gemini API": "#4285F4",
+  "JWT Authentication": "#D63AFF",
+  "OpenAI": "#10A37F",
 };
 
 export default function TechIcon({ name, className }: { name: string; className?: string }) {
   const Icon = iconMap[name];
   if (!Icon) return null;
-  return <Icon className={className} />;
+  
+  const color = colorMap[name];
+  return <Icon className={className} style={color ? { color } : undefined} />;
 }
