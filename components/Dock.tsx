@@ -41,49 +41,58 @@ export default function Dock() {
     { icon: <File {...iconProps} />, href: siteData.resumeUrl, label: "Resume" },
   ];
 
-  const themeIcon = mounted && resolvedTheme === "light"
-    ? <Moon {...iconProps} />
-    : <Sun {...iconProps} />;
+  const themeIcon =
+    mounted && resolvedTheme === "light" ? (
+      <Moon {...iconProps} />
+    ) : (
+      <Sun {...iconProps} />
+    );
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 md:bottom-1/4 md:left-auto md:right-30 md:translate-x-0 z-50 transition-all duration-300">
-      <div className="flex md:flex-col items-center gap-1 px-3.5 py-2.5 rounded-2xl backdrop-blur-md bg-glass border border-border-color shadow-[inset_0_1px_0_var(--glass-shadow-inset),0_8px_32px_rgba(0,0,0,0.4)]">
+    <nav
+      aria-label="Quick Navigation Dock"
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 md:bottom-1/3 md:left-auto md:right-8 lg:right-12 md:translate-x-0 z-50 transition-all duration-300"
+    >
+      <div className="flex md:flex-col items-center gap-1 p-2 rounded-2xl sm:rounded-3xl backdrop-blur-xl bg-surface/85 border border-border shadow-[var(--glass-shadow)]">
         {items.map((item) =>
           item.href ? (
             <a
               key={item.label}
               href={item.href}
               aria-label={item.label}
+              title={item.label}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
-              className="p-3 rounded-xl hover:bg-glass-hover active:scale-[0.92] transition-all group"
+              className="p-2.5 sm:p-3 rounded-xl hover:bg-surface-hover active:scale-[0.92] transition-all group cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
             >
               {item.icon}
             </a>
           ) : (
             <button
               key={item.label}
+              type="button"
               onClick={item.action}
               aria-label={item.label}
-              className="p-3 rounded-xl hover:bg-glass-hover active:scale-[0.92] transition-all group"
+              title={item.label}
+              className="p-2.5 sm:p-3 rounded-xl hover:bg-surface-hover active:scale-[0.92] transition-all group cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
             >
               {item.icon}
             </button>
           ),
         )}
 
-        <hr className="w-full mt-2" />
-
-        <div className="w-px h-5 md:w-5 md:h-px bg-glass-border mx-1.5 md:mx-0 md:my-1.5" />
+        <div className="w-px h-5 md:w-5 md:h-px bg-border mx-1 md:mx-0 md:my-1" />
 
         <button
+          type="button"
           onClick={toggleTheme}
           aria-label="Toggle theme"
-          className="p-3 rounded-xl hover:bg-glass-hover active:scale-[0.92] transition-all group"
+          title="Toggle theme"
+          className="p-2.5 sm:p-3 rounded-xl hover:bg-surface-hover active:scale-[0.92] transition-all group cursor-pointer focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
         >
           {themeIcon}
         </button>
       </div>
-    </div>
+    </nav>
   );
 }
