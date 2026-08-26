@@ -1,4 +1,4 @@
-# Studio Showcase Developer Portfolio
+# Portfolio
 
 A sleek, high-precision personal developer portfolio built with **Next.js 16 (Turbopack)**, **React 19**, **Tailwind CSS v4**, and **Motion**. Designed following modern studio showcase principles — leading with full-width working software artifacts, tactile matte textures, and confident typography.
 
