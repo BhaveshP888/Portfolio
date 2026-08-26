@@ -10,34 +10,45 @@ export default function Skills() {
   const reduce = useReducedMotion();
 
   return (
-    <section id="skills" className="py-10">
-      <h1 className="pb-2">Skills</h1>
-      <div className="space-y-6">
+    <section id="skills" className="py-16 sm:py-20 border-t border-border">
+      <div className="mb-10 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-text">
+          Technical Stack
+        </h2>
+        <p className="text-muted text-sm sm:text-base mt-1.5">
+          Languages, libraries, and frameworks I use to build scalable products.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {CATEGORIES.map((cat, catIdx) => (
-          <div key={cat}>
-            <p className="text-[11px] font-mono tracking-widest uppercase text-muted/50 mb-3">
+          <motion.div
+            key={cat}
+            initial={reduce ? false : { opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.45,
+              delay: catIdx * 0.08,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="space-y-4"
+          >
+            <h3 className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-muted font-mono">
               {cat}
-            </p>
+            </h3>
             <div className="flex flex-wrap gap-2">
-              {siteData.skills[cat].map((skill, i) => (
-                <motion.div
+              {siteData.skills[cat].map((skill) => (
+                <div
                   key={skill}
-                  initial={reduce ? false : { opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.4 }}
-                  transition={{
-                    duration: 0.45,
-                    delay: catIdx * 0.08 + i * 0.04,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface border border-border-color text-[13px] text-muted hover:text-text hover:border-text/20 transition-colors cursor-default"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface border border-border text-xs sm:text-[13px] text-muted hover:text-text hover:border-border-hover transition-colors cursor-default"
                 >
-                  <TechIcon name={skill} className="w-3.5 h-3.5 shrink-0" />
+                  <TechIcon name={skill} className="w-4 h-4 shrink-0" />
                   <span className="font-medium">{skill}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

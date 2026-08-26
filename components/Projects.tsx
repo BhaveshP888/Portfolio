@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 import { siteData } from "@/lib/data";
-import { ArrowSquareOut, GithubLogo } from "@phosphor-icons/react";
+import { ArrowUpRight, GithubLogo } from "@phosphor-icons/react";
 import TechIcon from "./TechIcon";
 import Image from "next/image";
 
@@ -10,12 +10,19 @@ export default function Projects() {
   const allProjects = siteData.projects;
 
   return (
-    <section id="projects" className="py-10">
-      <h2 className="text-[11px] font-mono tracking-widest uppercase text-muted/50 mb-6">
-        Projects
-      </h2>
+    <section id="projects" className="py-16 sm:py-24">
+      {/* Section Header */}
+      <div className="mb-10 sm:mb-14">
+        <h2 className="text-3xl sm:text-4xl font-bold font-display tracking-tight text-text">
+          Featured Projects
+        </h2>
+        <p className="text-muted text-base mt-2 max-w-xl">
+          Selected full-stack web applications, engineering experiments, and production deployments.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {/* Full-Width Showcase Stack */}
+      <div className="space-y-14 sm:space-y-20">
         {allProjects.map((project, i) => (
           <motion.article
             key={project.title}
@@ -27,78 +34,85 @@ export default function Projects() {
               delay: i * 0.08,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="group flex flex-col gap-4 p-4 rounded-3xl transition-all duration-300 backdrop-blur-md bg-glass border border-glass-border shadow-[inset_0_1px_0_var(--glass-shadow-inset)] hover:bg-glass-hover hover:border-glass-border-hover hover:shadow-[inset_0_1px_0_var(--glass-shadow-inset),0_0_28px_rgba(99,102,241,0.10)] hover:-translate-y-[2px]"
+            className="group flex flex-col gap-6 rounded-3xl p-5 sm:p-7 backdrop-blur-xl bg-surface/60 border border-border hover:border-border-hover transition-all duration-300 shadow-[var(--glass-shadow)]"
           >
-            {/* Project Screenshot / Cover Image */}
+            {/* Cinematic Visual Frame */}
             {"image" in project && project.image && (
-              <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-glass-border bg-black/10">
+              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl border border-border bg-black/20">
                 <Image
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} project preview screenshot`}
                   fill
-                  sizes="(max-width: 640px) 100vw, 300px"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  sizes="(max-width: 880px) 100vw, 840px"
+                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             )}
 
-            {/* Title & Links Row */}
-            <div className="flex items-center justify-between gap-2 px-1">
-              <h3 className="font-bold text-[18px] text-text tracking-tight font-display">
-                {project.title}
-              </h3>
-              <div className="flex items-center gap-3 shrink-0 text-muted">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${project.title} source code`}
-                    className="hover:text-text transition-colors"
-                  >
-                    <GithubLogo size={20} />
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${project.title} live demo`}
-                    className="hover:text-text transition-colors"
-                  >
-                    <ArrowSquareOut size={20} />
-                  </a>
-                )}
-              </div>
-            </div>
+            {/* Project Content & Links */}
+            <div className="space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <h3 className="text-2xl sm:text-3xl font-bold text-text font-display tracking-tight">
+                  {project.title}
+                </h3>
 
-            {/* Description */}
-            <p className="text-[13px] text-muted leading-relaxed px-1 flex-1">
-              {project.description}
-            </p>
-
-            {/* Bottom Tech-Stack & Status Row */}
-            <div className="flex items-end justify-between gap-4 mt-auto pt-3 px-1 border-t border-glass-border">
-              {/* Tech stack */}
-              <div className="space-y-2">
-                <p className="text-[9px] font-mono tracking-wider uppercase text-muted/50">
-                  Tech-Stack
-                </p>
-                <div className="flex items-center gap-2 flex-wrap">
-                  {project.tech.map((t) => (
-                    <TechIcon key={t} name={t} className="w-5 h-5 shrink-0" />
-                  ))}
+                {/* Direct Action Links */}
+                <div className="flex items-center gap-2.5 flex-wrap">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-text text-bg hover:opacity-90 active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+                    >
+                      <span>Live Demo</span>
+                      <ArrowUpRight size={14} weight="bold" />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-muted hover:text-text border border-border hover:border-border-hover bg-surface active:scale-[0.98] transition-all focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+                    >
+                      <GithubLogo size={15} />
+                      <span>Source</span>
+                    </a>
+                  )}
                 </div>
               </div>
 
-              {/* Status Badge */}
-              {"status" in project && project.status && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold bg-green-500/10 text-green-400 border border-green-500/20 shrink-0">
-                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  {project.status}
-                </span>
-              )}
+              {/* Description */}
+              <p className="text-muted text-sm sm:text-[15px] leading-relaxed max-w-[75ch]">
+                {project.description}
+              </p>
+
+              {/* Tech Stack & Status Footer */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-border">
+                {/* Tech Badges */}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {project.tech.map((t) => (
+                    <div
+                      key={t}
+                      title={t}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface border border-border text-xs text-muted hover:text-text hover:border-border-hover transition-colors cursor-default"
+                    >
+                      <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
+                      <span className="font-medium">{t}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Status Indicator */}
+                {"status" in project && project.status && (
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 shrink-0">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                    {project.status}
+                  </span>
+                )}
+              </div>
             </div>
           </motion.article>
         ))}
