@@ -19,9 +19,6 @@
   --glass-border:       rgba(0, 0, 0, 0.07);
   --glass-border-hover: rgba(0, 0, 0, 0.14);
   --glass-shadow:       0 8px 30px rgba(0, 0, 0, 0.04);
-
-  --torch-color-1:      rgba(16, 185, 129, 0.05);
-  --torch-color-2:      rgba(99, 102, 241, 0.025);
 }
 
 [data-theme='dark'] {
@@ -41,9 +38,6 @@
   --glass-border:       rgba(255, 255, 255, 0.07);
   --glass-border-hover: rgba(255, 255, 255, 0.16);
   --glass-shadow:       0 12px 36px rgba(0, 0, 0, 0.45);
-
-  --torch-color-1:      rgba(16, 185, 129, 0.07);
-  --torch-color-2:      rgba(99, 102, 241, 0.04);
 }
 
 /* ─── Tailwind Theme Registration ───────────────────────────────────────── */
@@ -92,66 +86,28 @@ body {
   color: var(--text);
 }
 
-/* ─── Tactile Matte Grain & Cursor Lighting ─────────────────────────────── */
-.bg-cursor-glow {
-  background: radial-gradient(
-    650px circle at var(--mouse-x, 50%) var(--mouse-y, 250px),
-    var(--torch-color-1) 0%,
-    var(--torch-color-2) 40%,
-    transparent 80%
-  );
-}
-
-.bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
-
-/* ─── Studio Lighting Orbs ──────────────────────────────────────────────── */
-@keyframes studio-drift-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(35px, -20px) scale(1.05); }
-}
-
-@keyframes studio-drift-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50%      { transform: translate(-25px, 25px) scale(0.95); }
-}
-
-.orb {
-  position: absolute;
-  border-radius: 9999px;
-  filter: blur(120px);
+/* ─── Studio Ambient Lighting (Hardware-Optimized, Zero-Cost) ────────────── */
+.studio-ambient {
+  position: fixed;
+  inset: 0;
   pointer-events: none;
-  will-change: transform;
+  z-index: 0;
+  overflow: hidden;
+  transform: translateZ(0); /* Promotes to dedicated GPU compositor layer */
 }
 
-.orb-a {
-  width: 750px;
-  height: 750px;
-  top: -220px;
-  right: -160px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(139, 92, 246, 0.08) 45%, transparent 70%);
-  animation: studio-drift-a 26s ease-in-out infinite;
+/* Multi-stop radial gradients: zero CPU calculation, zero layout repaints */
+.studio-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle 850px at 90% -10%, rgba(99, 102, 241, 0.13) 0%, rgba(139, 92, 246, 0.05) 45%, transparent 70%),
+    radial-gradient(circle 750px at 0% 90%, rgba(16, 185, 129, 0.08) 0%, rgba(56, 189, 248, 0.03) 45%, transparent 70%);
+  opacity: 1;
 }
 
-.orb-b {
-  width: 650px;
-  height: 650px;
-  bottom: 5%;
-  left: -180px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(56, 189, 248, 0.06) 45%, transparent 70%);
-  animation: studio-drift-b 30s ease-in-out infinite;
-}
-
-:root .orb-a {
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.07) 0%, transparent 70%);
-}
-:root .orb-b {
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .orb {
-    animation: none;
-  }
+:root .studio-ambient-glow {
+  background: 
+    radial-gradient(circle 850px at 90% -10%, rgba(99, 102, 241, 0.06) 0%, transparent 70%),
+    radial-gradient(circle 750px at 0% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 70%);
 }
