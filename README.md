@@ -64,7 +64,8 @@ A sleek, high-precision personal developer portfolio built with **Next.js 16 (Tu
 
 ### Prerequisites
 
-- [Bun](https://bun.sh/) (recommended) or Node.js 18+
+- **Node.js**: `v20.9.0` or higher (required by Next.js 16) — check with `node -v`
+- **Package Manager**: [Bun](https://bun.sh/) (recommended) or **npm** (comes with Node.js)
 
 ### Installation
 
@@ -76,12 +77,20 @@ A sleek, high-precision personal developer portfolio built with **Next.js 16 (Tu
 
 2. Install dependencies:
    ```bash
+   # Using Bun (Recommended)
    bun install
+
+   # OR using npm
+   npm install
    ```
 
 3. Run the development server:
    ```bash
+   # Using Bun
    bun dev
+
+   # OR using npm
+   npm run dev
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -90,13 +99,13 @@ A sleek, high-precision personal developer portfolio built with **Next.js 16 (Tu
 
 ## 📜 Available Scripts
 
-| Script | Command | Description |
-|---|---|---|
-| `dev` | `bun dev` | Starts the development server with Turbopack |
-| `build` | `bun run build` | Builds the optimized production application |
-| `start` | `bun start` | Starts the production server |
-| `lint` | `bun run lint` | Runs ESLint to check for code quality issues |
-| `typecheck` | `bunx tsc --noEmit` | Validates TypeScript types across the codebase |
+| Script | Bun Command | npm Command | Description |
+|---|---|---|---|
+| `dev` | `bun dev` | `npm run dev` | Starts the development server with Turbopack |
+| `build` | `bun run build` | `npm run build` | Builds the optimized production application |
+| `start` | `bun start` | `npm start` | Starts the production server |
+| `lint` | `bun run lint` | `npm run lint` | Runs ESLint to check for code quality issues |
+| `typecheck` | `bunx tsc --noEmit` | `npx tsc --noEmit` | Validates TypeScript types across the codebase |
 
 ---
 
