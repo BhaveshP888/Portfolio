@@ -40,18 +40,18 @@ export default function Projects() {
             {"image" in project && project.image && (
               <div
                 suppressHydrationWarning
-                className="relative aspect-[16/10] sm:aspect-[16/9] w-full overflow-hidden rounded-2xl border border-border bg-black/20"
+                className="relative w-full overflow-hidden rounded-2xl border border-border bg-black/20"
               >
                 <Image
                   src={project.image}
                   alt={`${project.title} project preview screenshot`}
                   title={project.title}
-                  fill
+                  width={1896}
+                  height={988}
                   sizes="(max-width: 880px) 100vw, 840px"
-                  className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+                  className="w-full h-auto block rounded-2xl"
                   suppressHydrationWarning
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             )}
 

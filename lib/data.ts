@@ -10,7 +10,7 @@ export const siteData = {
 
   about: `I'm a full-stack developer who loves turning raw ideas into production-ready products using React.js and Node.js.
 I like bringing new and interesting ideas to life by building full-stack applications.
-I build apps with robust APIs using Node.js & Express.js and manage databases with PostgreSQL and MongoDB.
+I build apps with robust APIs using Node.js and manage databases with PostgreSQL and MongoDB.
 I care about writing easily readable and maintainable code and shipping products that solve real-world problems.`,
 
   skills: {
@@ -56,7 +56,7 @@ I care about writing easily readable and maintainable code and shipping products
       tech: ["React 19", "TypeScript", "Fastify", "SQLite", "Docker", "Bun"],
       liveUrl: "",
       githubUrl: "https://github.com/BhaveshP888/Tessera",
-      image: "",
+      image: "/tessera_hero.png",
       status: "Completed",
     },
     {
