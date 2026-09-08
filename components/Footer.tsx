@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="text-sm font-semibold text-text font-display">
             {siteData.name}
           </p>
-          <p className="text-xs text-muted">
+          <p className="text-xs text-muted" suppressHydrationWarning>
             &copy; {year} · Built with Next.js & Tailwind CSS
           </p>
         </div>
