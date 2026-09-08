@@ -24,8 +24,8 @@ I care about writing easily readable and maintainable code and shipping products
       "Tailwind CSS",
       "shadcn/ui",
     ],
-    Backend: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Prisma ORM"],
-    Tools: ["Docker", "CI/CD", "Git"],
+    Backend: ["Node.js", "Express.js", "Redis", "MongoDB", "PostgreSQL", "Prisma ORM"],
+    Tools: ["Docker", "CI/CD", "Git", "Bun"],
   },
 
   projects: [
@@ -49,24 +49,26 @@ I care about writing easily readable and maintainable code and shipping products
       image: "/decodeai_hero.png",
       status: "Completed",
     },
-    /*
     {
-      title: "Project Three",
+      title: "Tessera",
       description:
-        "A REST API service with full CI/CD pipeline. Containerized with Docker and deployed automatically on push to main.",
-      tech: ["Node.js", "PostgreSQL", "Docker", "CI/CD"],
-      liveUrl: null,
-      githubUrl: "https://github.com/yourusername/project-three",
+        "A high-performance, local-first, zero-knowledge bookmark manager and encrypted private vault. Features on-device XChaCha20-Poly1305 authenticated encryption, SQLite FTS5 prefix indexing with Sørensen–Dice trigram fuzzy search, vector clock causality resolution, and a capability-gated extension runtime.",
+      tech: ["React 19", "TypeScript", "Fastify", "SQLite", "Docker", "Bun"],
+      liveUrl: "",
+      githubUrl: "https://github.com/BhaveshP888/Tessera",
+      image: "",
+      status: "Completed",
     },
     {
-      title: "Project Four",
+      title: "DisQueue",
       description:
-        "A MERN stack application with JWT authentication, role-based access control, and a responsive frontend.",
-      tech: ["MongoDB", "Express.js", "React", "Node.js"],
-      liveUrl: "https://project-four.vercel.app",
-      githubUrl: "https://github.com/yourusername/project-four",
+        "A distributed background task queue and rate-limiting microservice engine. Implements atomic Lua-based sliding-window ingress rate limiting on Redis Sorted Sets (ZSET), BullMQ worker orchestration with exponential backoff retries, dead-letter queue (DLQ) state escalation, and a real-time React telemetry dashboard.",
+      tech: ["Node.js", "Express.js", "Redis", "BullMQ", "PostgreSQL", "Prisma ORM", "Docker", "React"],
+      liveUrl: "",
+      githubUrl: "https://github.com/BhaveshP888/DisQueue",
+      image: "",
+      status: "Completed",
     },
-    */
   ],
 };
 

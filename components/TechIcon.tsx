@@ -16,6 +16,10 @@ import {
   GitOriginal,
   ReduxOriginal,
   SupabaseOriginal,
+  RedisOriginal,
+  SqliteOriginal,
+  FastifyOriginal,
+  BunOriginal,
 } from "devicons-react";
 import { SiShadcnui, SiJsonwebtokens, SiGoogle, SiOpenai } from "react-icons/si";
 
@@ -26,6 +30,7 @@ const iconMap: Record<string, React.ElementType> = {
   "TypeScript": TypescriptOriginal,
   "React": ReactOriginal,
   "React.js": ReactOriginal,
+  "React 19": ReactOriginal,
   "Next.js": NextjsOriginal,
   "Tailwind CSS": TailwindcssOriginal,
   "TailwindCSS": TailwindcssOriginal,
@@ -45,6 +50,11 @@ const iconMap: Record<string, React.ElementType> = {
   "Gemini API": SiGoogle,
   "JWT Authentication": SiJsonwebtokens,
   "OpenAI": SiOpenai,
+  "Redis": RedisOriginal,
+  "BullMQ": RedisOriginal,
+  "SQLite": SqliteOriginal,
+  "Fastify": FastifyOriginal,
+  "Bun": BunOriginal,
 };
 
 const colorMap: Record<string, string> = {
