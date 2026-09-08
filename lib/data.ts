@@ -15,17 +15,28 @@ I care about writing easily readable and maintainable code and shipping products
 
   skills: {
     Frontend: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "TypeScript",
       "React",
       "Next.js",
+      "TypeScript",
+      "JavaScript",
       "Tailwind CSS",
+      "Redux Toolkit",
       "shadcn/ui",
+      "HTML",
+      "CSS",
     ],
-    Backend: ["Node.js", "Express.js", "Redis", "MongoDB", "PostgreSQL", "Prisma ORM"],
-    Tools: ["Docker", "CI/CD", "Git", "Bun"],
+    Backend: [
+      "Node.js",
+      "Express.js",
+      "Fastify",
+      "Redis",
+      "BullMQ",
+      "PostgreSQL",
+      "MongoDB",
+      "SQLite",
+      "Prisma ORM",
+    ],
+    Tools: ["Docker", "Bun", "Turborepo", "Git", "CI/CD"],
   },
 
   projects: [
