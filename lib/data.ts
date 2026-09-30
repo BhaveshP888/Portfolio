@@ -1,10 +1,10 @@
 export const siteData = {
   name: "Bhavesh Patil",
   role: "Full-Stack Developer",
-  tagline: "I love to build modern web apps and bring new ideas to life.",
+  tagline: "Passionate about working on challenging problems and building products that make a difference with a modern and scalable tech stack",
   email: "plbhavesh88@gmail.com",
   github: "https://github.com/BhaveshP888",
-  linkedin: "https://linkedin.com/in/yourusername",
+  linkedin: "https://www.linkedin.com/in/bhaveshh-patil/",
   resumeUrl: "/resume.pdf", // drop resume.pdf into /public when ready
   availableForWork: true,
 
@@ -44,7 +44,16 @@ I care about writing easily readable and maintainable code and shipping products
       title: "DecodeAi",
       description:
         "Decode is a technical engine and web interface for parsing, normalizing, and analyzing ingredient labels from foods, beverages, and pharmaceuticals. It leverages generative AI to identify additives, evaluate chemical safety, and track cumulative compound exposure over time.",
-      tech: ["Next.js", "TailwindCSS", "TypeScript", "PostgreSQL", "Prisma ORM", "Supabase", "Gemini API", "Supabase Auth"],
+      tech: [
+        "Next.js",
+        "TailwindCSS",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Supabase",
+        "Gemini API",
+        "Supabase Auth",
+      ],
       liveUrl: "https://decode-dusky.vercel.app/",
       githubUrl: "https://github.com/BhaveshP888/Decode",
       image: "/decodeai_hero.png",
@@ -62,7 +71,16 @@ I care about writing easily readable and maintainable code and shipping products
       title: "DisQueue",
       description:
         "A distributed background task queue and rate-limiting microservice engine. Implements atomic Lua-based sliding-window ingress rate limiting on Redis Sorted Sets (ZSET), BullMQ worker orchestration with exponential backoff retries, dead-letter queue (DLQ) state escalation, and a real-time React telemetry dashboard.",
-      tech: ["Node.js", "Express.js", "Redis", "BullMQ", "PostgreSQL", "Prisma ORM", "Docker", "React"],
+      tech: [
+        "Node.js",
+        "Express.js",
+        "Redis",
+        "BullMQ",
+        "PostgreSQL",
+        "Prisma ORM",
+        "Docker",
+        "React",
+      ],
       liveUrl: "",
       githubUrl: "https://github.com/BhaveshP888/DisQueue",
       image: "",
