@@ -94,29 +94,18 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {/* Tech Stack & Status Footer */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-border">
-                {/* Tech Badges */}
-                <div className="flex items-center gap-2 flex-wrap">
-                  {project.tech.map((t) => (
-                    <div
-                      key={t}
-                      title={t}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface border border-border text-xs text-muted hover:text-text hover:border-border-hover transition-colors cursor-default"
-                    >
-                      <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
-                      <span className="font-medium">{t}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Status Indicator */}
-                {"status" in project && project.status && (
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-400 shrink-0">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    {project.status}
-                  </span>
-                )}
+              {/* Tech Stack Footer */}
+              <div className="flex items-center gap-2 flex-wrap pt-4 border-t border-border">
+                {project.tech.map((t) => (
+                  <div
+                    key={t}
+                    title={t}
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface border border-border text-xs text-muted hover:text-text hover:border-border-hover transition-colors cursor-default"
+                  >
+                    <TechIcon name={t} className="w-3.5 h-3.5 shrink-0" />
+                    <span className="font-medium">{t}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </motion.article>

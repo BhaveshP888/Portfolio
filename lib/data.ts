@@ -41,16 +41,6 @@ I care about writing easily readable and maintainable code and shipping products
 
   projects: [
     {
-      title: "Logitrack",
-      description:
-        "LogiTrack is a modern, real-time logistics and supply chain orchestration platform. It enables administrators to manage complex global infrastructures, monitor real-time telemetrics, and optimize routing across fleets with military-grade precision. The platform also provides a dedicated driver portal for route execution and checkpoint tracking.",
-      tech: ["React.js", "Redux Toolkit", "TailwindCSS", "TypeScript", "Node.js", "PostgreSQL", "Prisma", "JWT Authentication"],
-      liveUrl: "https://logitrack-beta.vercel.app",
-      githubUrl: "https://github.com/BhaveshP888/logitrack",
-      image: "/logitrack_hero.png",
-      status: "Completed",
-    },
-    {
       title: "DecodeAi",
       description:
         "Decode is a technical engine and web interface for parsing, normalizing, and analyzing ingredient labels from foods, beverages, and pharmaceuticals. It leverages generative AI to identify additives, evaluate chemical safety, and track cumulative compound exposure over time.",
@@ -58,7 +48,6 @@ I care about writing easily readable and maintainable code and shipping products
       liveUrl: "https://decode-dusky.vercel.app/",
       githubUrl: "https://github.com/BhaveshP888/Decode",
       image: "/decodeai_hero.png",
-      status: "Completed",
     },
     {
       title: "Tessera",
@@ -68,7 +57,6 @@ I care about writing easily readable and maintainable code and shipping products
       liveUrl: "",
       githubUrl: "https://github.com/BhaveshP888/Tessera",
       image: "/tessera_hero.png",
-      status: "Completed",
     },
     {
       title: "DisQueue",
@@ -78,7 +66,6 @@ I care about writing easily readable and maintainable code and shipping products
       liveUrl: "",
       githubUrl: "https://github.com/BhaveshP888/DisQueue",
       image: "",
-      status: "Completed",
     },
   ],
 };
