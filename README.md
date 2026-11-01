@@ -132,7 +132,7 @@ export const siteData = {
   email: "your.email@example.com",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourusername",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "/resume",
   availableForWork: true,
   // Add your projects, skills, and about copy...
 };

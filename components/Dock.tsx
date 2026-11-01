@@ -38,7 +38,7 @@ export default function Dock() {
     { icon: <GithubLogo {...iconProps} />, href: siteData.github, label: "GitHub", external: true },
     { icon: <LinkedinLogo {...iconProps} />, href: siteData.linkedin, label: "LinkedIn", external: true },
     { icon: <EnvelopeSimple {...iconProps} />, href: `mailto:${siteData.email}`, label: "Email" },
-    { icon: <File {...iconProps} />, href: siteData.resumeUrl, label: "Resume" },
+    { icon: <File {...iconProps} />, href: siteData.resumeUrl, label: "Resume", external: true },
   ];
 
   const themeIcon =

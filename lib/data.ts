@@ -5,7 +5,7 @@ export const siteData = {
   email: "plbhavesh88@gmail.com",
   github: "https://github.com/BhaveshP888",
   linkedin: "https://www.linkedin.com/in/bhaveshh-patil/",
-  resumeUrl: "/resume.pdf", // drop resume.pdf into /public when ready
+  resumeUrl: "/resume", // redirects to latest Google Drive / Cloud resume (configured in next.config.ts or RESUME_URL env)
   availableForWork: true,
 
   about: `I'm a full-stack developer who loves turning raw ideas into production-ready products using React.js and Node.js.
